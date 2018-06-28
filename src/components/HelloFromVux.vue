@@ -4,8 +4,9 @@
       <img class="logo" src="../assets/vux_logo.png">
       <h1> </h1>
     </div>
-    <group title="cell demo">
+    <group title="cell test">
       <cell title="VUX" value="cool" is-link></cell>
+      <x-button type="primary" @click.native="insertCoin">投币</x-button>
     </group>
   </div>
 </template>
@@ -25,6 +26,12 @@ export default {
       // preserves its current state and we are modifying
       // its initial state.
       msg: 'Hello World!'
+    }
+  },
+  methods: {
+    insertCoin() {
+      console.log('haha');
+      this.$socket.emit('chat message', 'haha');
     }
   }
 }
